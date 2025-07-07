@@ -1,34 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Webpage</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sadanand Konapur | Portfolio</title>
+  <style>
+    :root {
+      --main-color: #2e1065;
+      --accent-color: #ec4899;
+      --bg-color: #fdf4ff;
+      --text-color: #4c1d95;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to right, #0f172a, #1e3a8a);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      animation: fadeInDown 1s ease-in;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 3rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+    }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+      animation: fadeInUp 1s ease-in;
+    }
+    section {
+      margin-bottom: 3rem;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 1rem;
+    }
+    h2 {
+      font-size: 2rem;
+      color: var(--main-color);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    #skills ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    #skills li {
+      background: none;
+      padding: 5px 10px;
+      margin: 0;
+      border: 1px solid var(--accent-color);
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: var(--main-color);
+      transition: background 0.3s, color 0.3s;
+    }
+    #skills li:hover {
+      background: var(--accent-color);
+      color: white;
+    }
+    ul li:not(#skills li) {
+      background: #e2e8f0;
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease, background 0.3s;
+    }
+    ul li:not(#skills li):hover {
+      background: var(--accent-color);
+      color: white;
+      transform: translateX(10px);
+    }
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background-color: var(--main-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <img src="https://media.licdn.com/dms/image/v2/D5603AQE36np5…eta&t=6T_t1-DiegGKtrGKw7cJEnXuLneAV1-dgyiK9HmelyY" alt="Sadanand Konapur">
+    <h1>Sadanand Konapur</h1>
+    <p>Python Developer | AI/ML Enthusiast</p>
+  </header>
 
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am an undergraduate specialized in AI/ML, eager to learn more in this field. Currently learning Data Structures and Algorithms using Python.</p>
+      <p>My passion for solving real-world problems using technology drives me to continuously improve my skills. I enjoy working on projects that blend data with decision-making, especially in the health and social sectors. When I'm not coding, I'm exploring open-source tools, attending tech webinars, or helping peers with programming.</p>
+    </section>
 
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Python</li>
+        <li>Java</li>
+        <li>SQL</li>
+        <li>VS Code</li>
+        <li>Cursor</li>
+        <li>MySQL</li>
+        <li>MongoDB</li>
+      </ul>
+    </section>
 
-    <div class="content">
-        <h2>About Us</h2>
-        <p>Hi every  to be a great day  </p>
-    </div>
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Heart Stroke Prediction</strong> – Built using Machine Learning models to predict stroke risk based on user health data.</li>
+      </ul>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 My Website</p>
-    </footer>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a></p>
+      <p>LinkedIn: <a href="https://in.linkedin.com/in/sadanand-konapur-53001a260" target="_blank">Sadanand Konapur</a></p>
+    </section>
+  </main>
 
+  <footer>
+    <p>&copy; 2025 Sadanand Konapur</p>
+  </footer>
 </body>
 </html>
