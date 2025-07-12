@@ -4,166 +4,84 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sadanand Konapur | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --main-color: #2e1065;
-      --accent-color: #ec4899;
-      --bg-color: #fdf4ff;
-      --text-color: #4c1d95;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(-45deg, #0f172a, #1e3a8a, #4c1d95, #ec4899);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.9);
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
-      z-index: 1000;
-    }
-    nav a {
+      background: linear-gradient(to right, #1e3a8a, #4c1d95);
       color: white;
-      margin: 0 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: var(--accent-color);
+      line-height: 1.6;
     }
     header {
       text-align: center;
-      padding: 6rem 1rem 3rem;
-      color: white;
+      padding: 4rem 1rem 2rem;
     }
     header img {
       width: 120px;
       height: 120px;
-      object-fit: cover;
       border-radius: 50%;
       border: 3px solid white;
       margin-bottom: 1rem;
     }
-    header h1 {
-      font-size: 3rem;
+    h1 {
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
-    header p span {
-      color: var(--accent-color);
-      font-weight: 600;
-    }
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
-    }
-    section {
-      margin-bottom: 3rem;
-      border-left: 4px solid var(--accent-color);
-      padding-left: 1rem;
-      opacity: 1; /* ✅ ALWAYS VISIBLE EVEN IF JS FAILS */
-      transform: none;
-    }
     h2 {
-      font-size: 2rem;
-      color: FFFFFF;
+      font-size: 1.8rem;
+      color: #ec4899;
+      margin-top: 2rem;
       margin-bottom: 1rem;
     }
-    #skills ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 1rem;
     }
-    #skills li {
-      padding: 5px 10px;
-      border: 1px solid var(--accent-color);
-      border-radius: 20px;
-      font-size: 0.9rem;
-      color: var(--main-color);
-      transition: background 0.3s, color 0.3s;
+    ul {
+      list-style: none;
+      padding-left: 0;
     }
-    #skills li:hover {
-      background: var(--accent-color);
-      color: white;
-    }
-    ul li:not(#skills li) {
-      background: #e2e8f0;
+    ul li {
+      background: rgba(255, 255, 255, 0.1);
       padding: 10px 15px;
-      border-radius: 10px;
+      border-radius: 8px;
       margin-bottom: 10px;
-      transition: transform 0.3s ease, background 0.3s;
-    }
-    ul li:not(#skills li):hover {
-      background: var(--accent-color);
-      color: white;
-      transform: translateX(10px);
     }
     a {
-      color: var(--accent-color);
+      color: #f9a8d4;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
     footer {
-      background-color: var(--main-color);
-      color: white;
       text-align: center;
       padding: 1rem;
-    }
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      background-color: #2e1065;
+      color: white;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <header>
     <img src="https://media.licdn.com/dms/image/v2/D5603AQE36np53RDmIA/profile-displayphoto-shrink_200_200/B56ZbjgmItH0AY-/0/1747573705583?e=2147483647&v=beta&t=6T_t1-DiegGKtrGKw7cJEnXuLneAV1-dgyiK9HmelyY" alt="Sadanand Konapur">
     <h1>Sadanand Konapur</h1>
-    <p><span id="typed-text"></span></p>
+    <p>Python Developer | AI/ML Enthusiast</p>
   </header>
 
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>I’m <strong>Sadanand Konapur</strong>, an undergraduate AI/ML student passionate about using technology to solve real-world problems. I am currently enhancing my problem-solving skills through Data Structures and Algorithms in Python. I’m curious, driven, and continuously explore new tools and opportunities for innovation.</p>
-      <p>Besides tech, I actively attend webinars, contribute to open-source communities, and assist my peers with learning programming concepts. My focus lies in projects that impact healthcare and society through data-driven insights.</p>
+      <p>I’m <strong>Sadanand Konapur</strong>, an undergraduate AI/ML student passionate about using technology to solve real-world problems. I am currently enhancing my problem-solving skills through Data Structures and Algorithms in Python. I explore tools, attend webinars, and help peers in coding.</p>
     </section>
 
     <section id="education">
       <h2>Education</h2>
       <ul>
-        <li><strong>Marri Laxman Reddy Institute of Technology and Management</strong><br>
-        B.Tech in Artificial Intelligence and Machine Learning<br>
-        Expected Graduation: 2027</li>
+        <li><strong>Marri Laxman Reddy Institute of Technology and Management</strong><br>B.Tech in AI & ML, Expected Graduation: 2027</li>
       </ul>
     </section>
 
@@ -174,55 +92,29 @@
         <li>Java</li>
         <li>SQL</li>
         <li>VS Code</li>
-        <li>Cursor</li>
         <li>MySQL</li>
         <li>MongoDB</li>
-        <li>Data Structures</li>
       </ul>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-        <li><strong>Heart Stroke Prediction</strong> – Developed a machine learning model to analyze user health data and predict the risk of a stroke.</li>
+        <li><strong>Heart Stroke Prediction</strong> – ML model to predict stroke risk using health data.</li>
       </ul>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p><strong>Email:</strong> <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://in.linkedin.com/in/sadanand-konapur-53001a260" target="_blank">linkedin.com/in/sadanand-konapur-53001a260</a></p>
-      <p><strong>Portfolio:</strong> <a href="https://sadanandkonapur.github.io/profile/" target="_blank">sadanandkonapur.github.io/profile</a></p>
+      <p>Email: <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/sadanand-konapur-53001a260" target="_blank">linkedin.com/in/sadanand-konapur</a></p>
+      <p>Portfolio: <a href="https://sadanandkonapur.github.io/profile/" target="_blank">sadanandkonapur.github.io/profile</a></p>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Sadanand Konapur</p>
   </footer>
-
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      new Typed("#typed-text", {
-        strings: ["Python Developer", "AI/ML Enthusiast", "Open Source Contributor", "Tech Explorer"],
-        typeSpeed: 50,
-        backSpeed: 30,
-        loop: true
-      });
-
-      if (window.gsap) {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.utils.toArray("section").forEach(section => {
-          gsap.from(section, {
-            scrollTrigger: section,
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            ease: "power2.out"
-          });
-        });
-      }
-    });
-  </script>
 </body>
 </html>
