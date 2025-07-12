@@ -3,97 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sadanand Konapur | Portfolio</title>
+  <title>Sadanand Konapur | AI/ML Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    body {
+    :root {
+      --bg: #0f172a;
+      --highlight: #ec4899;
+      --text: #ffffff;
+    }
+
+    * {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #1e3a8a, #4c1d95);
-      color: white;
-      line-height: 1.6;
+      padding: 0;
+      box-sizing: border-box;
       scroll-behavior: smooth;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: #1e293b;
-      padding: 1rem;
+      background: rgba(15, 23, 42, 0.95);
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      z-index: 999;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      padding: 1rem 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     }
+
     nav a {
-      color: white;
-      font-weight: 600;
+      color: var(--text);
+      margin: 0 1.2rem;
       text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
     }
+
     nav a:hover {
-      color: #ec4899;
+      color: var(--highlight);
     }
+
+    .spacer {
+      height: 70px;
+    }
+
     header {
-      padding: 6rem 1rem 2rem;
       text-align: center;
+      padding: 4rem 1rem 2rem;
     }
+
     header img {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      border: 3px solid white;
+      border: 3px solid var(--highlight);
       margin-bottom: 1rem;
     }
-    h1 {
+
+    header h1 {
       font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-weight: 600;
     }
+
+    header p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
     h2 {
       font-size: 1.8rem;
-      color: #ec4899;
-      margin-top: 2rem;
+      color: var(--highlight);
       margin-bottom: 1rem;
     }
-    main {
-      max-width: 800px;
-      margin: auto;
-      padding: 1rem;
-    }
+
     section {
-      margin-top: 3rem;
+      margin-bottom: 3rem;
     }
+
     ul {
       list-style: none;
       padding-left: 0;
     }
+
     ul li {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
       padding: 10px 15px;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-bottom: 10px;
     }
+
     a {
-      color: #f9a8d4;
-      text-decoration: none;
+      color: var(--highlight);
     }
+
     a:hover {
       text-decoration: underline;
     }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      background: var(--highlight);
+      color: black;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    .education-logo {
+      width: 40px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
     footer {
       text-align: center;
+      background: #1e293b;
       padding: 1rem;
-      background-color: #2e1065;
-      color: white;
-      margin-top: 2rem;
-    }
-    /* Space to prevent content under navbar */
-    .spacer {
-      height: 70px;
+      color: #cbd5e1;
     }
   </style>
 </head>
 <body>
+
   <nav>
     <a href="#about">About</a>
     <a href="#education">Education</a>
@@ -107,52 +158,59 @@
   <header>
     <img src="https://media.licdn.com/dms/image/v2/D5603AQE36np53RDmIA/profile-displayphoto-shrink_200_200/B56ZbjgmItH0AY-/0/1747573705583?e=2147483647&v=beta&t=6T_t1-DiegGKtrGKw7cJEnXuLneAV1-dgyiK9HmelyY" alt="Sadanand Konapur">
     <h1>Sadanand Konapur</h1>
-    <p>Python Developer | AI/ML Enthusiast</p>
+    <p>AI/ML Student · Python Developer · Tech Explorer</p>
   </header>
 
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>I’m <strong>Sadanand Konapur</strong>, an undergraduate AI/ML student passionate about using technology to solve real-world problems. I am currently enhancing my problem-solving skills through Data Structures and Algorithms in Python. I explore tools, attend webinars, and help peers in coding.</p>
+      <p>I am an undergraduate in Artificial Intelligence and Machine Learning with a strong passion for building impactful solutions using Python and data. I enjoy applying my skills to solve real-world challenges, especially in health and social sectors.</p>
+      <p>Currently learning advanced DSA in Python, I’m also engaged in contributing to open-source tools, attending tech webinars, and mentoring peers in programming fundamentals.</p>
     </section>
 
     <section id="education">
       <h2>Education</h2>
       <ul>
-        <li><strong>Marri Laxman Reddy Institute of Technology and Management</strong><br>B.Tech in AI & ML, Expected Graduation: 2027</li>
+        <li>
+          <img src="/mnt/data/9087821a-afac-4b83-aab9-efd2c5c5b79e.png" alt="MLRITM Logo" class="education-logo">
+          <strong>Marri Laxman Reddy Institute of Technology and Management</strong><br />
+          B.Tech in Artificial Intelligence and Machine Learning<br />
+          <em>Expected Graduation: 2027</em>
+        </li>
       </ul>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
-      <ul>
-        <li>Python</li>
-        <li>Java</li>
-        <li>SQL</li>
-        <li>VS Code</li>
-        <li>MySQL</li>
-        <li>MongoDB</li>
-      </ul>
+      <div class="tag-list">
+        <span class="tag">Python</span>
+        <span class="tag">Java</span>
+        <span class="tag">SQL</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">VS Code</span>
+        <span class="tag">Cursor IDE</span>
+      </div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-        <li><strong>Heart Stroke Prediction</strong> – ML model to predict stroke risk using health data.</li>
+        <li><strong>Heart Stroke Prediction</strong><br />Built a machine learning model to predict stroke risk using real-world health data. Focused on accuracy and interpretability.</li>
       </ul>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/sadanand-konapur-53001a260" target="_blank">linkedin.com/in/sadanand-konapur</a></p>
-      <p>Portfolio: <a href="https://sadanandkonapur.github.io/profile/" target="_blank">sadanandkonapur.github.io/profile</a></p>
+      <p><strong>Email:</strong> <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/sadanand-konapur-53001a260" target="_blank">linkedin.com/in/sadanand-konapur</a></p>
+      <p><strong>Portfolio:</strong> <a href="https://sadanandkonapur.github.io/profile/" target="_blank">sadanandkonapur.github.io/profile</a></p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Sadanand Konapur</p>
+    &copy; 2025 Sadanand Konapur. All rights reserved.
   </footer>
 </body>
 </html>
