@@ -79,7 +79,8 @@
       margin-bottom: 3rem;
       border-left: 4px solid var(--accent-color);
       padding-left: 1rem;
-      opacity: 0;
+      opacity: 1; /* ✅ ALWAYS VISIBLE EVEN IF JS FAILS */
+      transform: none;
     }
     h2 {
       font-size: 2rem;
@@ -212,16 +213,18 @@
         loop: true
       });
 
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray("section").forEach(section => {
-        gsap.from(section, {
-          scrollTrigger: section,
-          opacity: 0,
-          y: 50,
-          duration: 1,
-          ease: "power2.out"
+      if (window.gsap) {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray("section").forEach(section => {
+          gsap.from(section, {
+            scrollTrigger: section,
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: "power2.out"
+          });
         });
-      });
+      }
     });
   </script>
 </body>
