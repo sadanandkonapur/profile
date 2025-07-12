@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sadanand Konapur | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <style>
     :root {
       --main-color: #2e1065;
@@ -18,17 +22,17 @@
       scroll-behavior: smooth;
     }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-color);
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(-45deg, #0f172a, #1e3a8a, #4c1d95, #ec4899);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
       color: var(--text-color);
       line-height: 1.6;
     }
     header {
-      background: linear-gradient(to right, #0f172a, #1e3a8a);
-      color: white;
       text-align: center;
       padding: 3rem 1rem;
-      animation: fadeInDown 1s ease-in;
+      color: white;
     }
     header img {
       width: 120px;
@@ -40,27 +44,27 @@
     }
     header h1 {
       font-size: 3rem;
+      margin-bottom: 0.5rem;
     }
-    header p {
-      font-size: 1.2rem;
-      color: #cbd5e1;
+    header p span {
+      color: var(--accent-color);
+      font-weight: 600;
     }
     main {
       max-width: 1000px;
       margin: auto;
       padding: 2rem;
-      animation: fadeInUp 1s ease-in;
     }
     section {
       margin-bottom: 3rem;
       border-left: 4px solid var(--accent-color);
       padding-left: 1rem;
+      opacity: 0;
     }
     h2 {
       font-size: 2rem;
       color: var(--main-color);
       margin-bottom: 1rem;
-      position: relative;
     }
     #skills ul {
       display: flex;
@@ -68,9 +72,7 @@
       gap: 10px;
     }
     #skills li {
-      background: none;
       padding: 5px 10px;
-      margin: 0;
       border: 1px solid var(--accent-color);
       border-radius: 20px;
       font-size: 0.9rem;
@@ -105,20 +107,11 @@
       color: white;
       text-align: center;
       padding: 1rem;
-      animation: fadeIn 1.5s ease-in;
     }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
   </style>
 </head>
@@ -126,56 +119,68 @@
   <header>
     <img src="https://media.licdn.com/dms/image/v2/D5603AQE36np53RDmIA/profile-displayphoto-shrink_200_200/B56ZbjgmItH0AY-/0/1747573705583?e=2147483647&v=beta&t=6T_t1-DiegGKtrGKw7cJEnXuLneAV1-dgyiK9HmelyY" alt="Sadanand Konapur">
     <h1>Sadanand Konapur</h1>
-    <p>Python Developer | AI/ML Enthusiast</p>
+    <p><span id="typed-text"></span></p>
   </header>
-
-<main>
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am an undergraduate specialized in AI/ML, eager to learn more in this field. Currently learning Data Structures and Algorithms using Python.</p>
-    <p>My passion for solving real-world problems using technology drives me to continuously improve my skills. I enjoy working on projects that blend data with decision-making, especially in the health and social sectors. When I'm not coding, I'm exploring open-source tools, attending tech webinars, or helping peers with programming.</p>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>Marri Laxman Reddy Institute of Technology and Management</strong><br>
-      B.Tech in Artificial Intelligence and Machine Learning<br>
-      Expected Graduation: 2027</li>
-    </ul>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Python</li>
-      <li>Java</li>
-      <li>SQL</li>
-      <li>VS Code</li>
-      <li>Cursor</li>
-      <li>MySQL</li>
-      <li>MongoDB</li>
-    </ul>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Heart Stroke Prediction</strong> – Built using Machine Learning models to predict stroke risk based on user health data.</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a></p>
-    <p>LinkedIn: <a href="https://in.linkedin.com/in/sadanand-konapur-53001a260" target="_blank">Sadanand Konapur</a></p>
-  </section>
-</main>
-
-
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am an undergraduate specialized in AI/ML, eager to learn more in this field. Currently learning Data Structures and Algorithms using Python.</p>
+      <p>My passion for solving real-world problems using technology drives me to continuously improve my skills. I enjoy working on projects that blend data with decision-making, especially in the health and social sectors. When I'm not coding, I'm exploring open-source tools, attending tech webinars, or helping peers with programming.</p>
+    </section>
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Marri Laxman Reddy Institute of Technology and Management</strong><br>
+        B.Tech in Artificial Intelligence and Machine Learning<br>
+        Expected Graduation: 2027</li>
+      </ul>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Python</li>
+        <li>Java</li>
+        <li>SQL</li>
+        <li>VS Code</li>
+        <li>Cursor</li>
+        <li>MySQL</li>
+        <li>MongoDB</li>
+      </ul>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Heart Stroke Prediction</strong> – Built using Machine Learning models to predict stroke risk based on user health data.</li>
+      </ul>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a></p>
+      <p>LinkedIn: <a href="https://in.linkedin.com/in/sadanand-konapur-53001a260" target="_blank">Sadanand Konapur</a></p>
+    </section>
+  </main>
   <footer>
     <p>&copy; 2025 Sadanand Konapur</p>
   </footer>
+  <script>
+    new Typed("#typed-text", {
+      strings: ["Python Developer", "AI/ML Enthusiast", "Tech Explorer"],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray("section").forEach(section => {
+      gsap.from(section, {
+        scrollTrigger: section,
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out"
+      });
+    });
+  </script>
 </body>
 </html>
