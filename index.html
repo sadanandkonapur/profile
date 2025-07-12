@@ -29,9 +29,29 @@
       color: var(--text-color);
       line-height: 1.6;
     }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.9);
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent-color);
+    }
     header {
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 6rem 1rem 3rem;
       color: white;
     }
     header img {
@@ -116,17 +136,27 @@
   </style>
 </head>
 <body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header>
     <img src="https://media.licdn.com/dms/image/v2/D5603AQE36np53RDmIA/profile-displayphoto-shrink_200_200/B56ZbjgmItH0AY-/0/1747573705583?e=2147483647&v=beta&t=6T_t1-DiegGKtrGKw7cJEnXuLneAV1-dgyiK9HmelyY" alt="Sadanand Konapur">
     <h1>Sadanand Konapur</h1>
     <p><span id="typed-text"></span></p>
   </header>
+
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>I am an undergraduate specialized in AI/ML, eager to learn more in this field. Currently learning Data Structures and Algorithms using Python.</p>
-      <p>My passion for solving real-world problems using technology drives me to continuously improve my skills. I enjoy working on projects that blend data with decision-making, especially in the health and social sectors. When I'm not coding, I'm exploring open-source tools, attending tech webinars, or helping peers with programming.</p>
+      <p>I’m <strong>Sadanand Konapur</strong>, an undergraduate AI/ML student passionate about using technology to solve real-world problems. I am currently enhancing my problem-solving skills through Data Structures and Algorithms in Python. I’m curious, driven, and continuously explore new tools and opportunities for innovation.</p>
+      <p>Besides tech, I actively attend webinars, contribute to open-source communities, and assist my peers with learning programming concepts. My focus lies in projects that impact healthcare and society through data-driven insights.</p>
     </section>
+
     <section id="education">
       <h2>Education</h2>
       <ul>
@@ -135,6 +165,7 @@
         Expected Graduation: 2027</li>
       </ul>
     </section>
+
     <section id="skills">
       <h2>Skills</h2>
       <ul>
@@ -145,40 +176,51 @@
         <li>Cursor</li>
         <li>MySQL</li>
         <li>MongoDB</li>
+        <li>Data Structures</li>
+        <li>Machine Learning</li>
       </ul>
     </section>
+
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-        <li><strong>Heart Stroke Prediction</strong> – Built using Machine Learning models to predict stroke risk based on user health data.</li>
+        <li><strong>Heart Stroke Prediction</strong> – Developed a machine learning model to analyze user health data and predict the risk of a stroke.</li>
+        <li><strong>Weather Alert System</strong> – A Python-based tool that fetches live weather data and notifies users of critical alerts via email.</li>
+        <li><strong>Missing Travel Stop Alert App</strong> – Mobile app idea designed to alert passengers when they approach or miss their desired travel stop.</li>
       </ul>
     </section>
+
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a></p>
-      <p>LinkedIn: <a href="https://in.linkedin.com/in/sadanand-konapur-53001a260" target="_blank">Sadanand Konapur</a></p>
+      <p><strong>Email:</strong> <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://in.linkedin.com/in/sadanand-konapur-53001a260" target="_blank">linkedin.com/in/sadanand-konapur-53001a260</a></p>
+      <p><strong>Portfolio:</strong> <a href="https://sadanandkonapur.github.io/profile/" target="_blank">sadanandkonapur.github.io/profile</a></p>
     </section>
   </main>
+
   <footer>
     <p>&copy; 2025 Sadanand Konapur</p>
   </footer>
-  <script>
-    new Typed("#typed-text", {
-      strings: ["Python Developer", "AI/ML Enthusiast", "Tech Explorer"],
-      typeSpeed: 50,
-      backSpeed: 30,
-      loop: true
-    });
 
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray("section").forEach(section => {
-      gsap.from(section, {
-        scrollTrigger: section,
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: "power2.out"
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      new Typed("#typed-text", {
+        strings: ["Python Developer", "AI/ML Enthusiast", "Open Source Contributor", "Tech Explorer"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true
+      });
+
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.utils.toArray("section").forEach(section => {
+        gsap.from(section, {
+          scrollTrigger: section,
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power2.out"
+        });
       });
     });
   </script>
