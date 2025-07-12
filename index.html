@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sadanand Konapur | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -12,10 +12,31 @@
       background: linear-gradient(to right, #1e3a8a, #4c1d95);
       color: white;
       line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #1e293b;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    nav a {
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #ec4899;
     }
     header {
+      padding: 6rem 1rem 2rem;
       text-align: center;
-      padding: 4rem 1rem 2rem;
     }
     header img {
       width: 120px;
@@ -38,6 +59,9 @@
       max-width: 800px;
       margin: auto;
       padding: 1rem;
+    }
+    section {
+      margin-top: 3rem;
     }
     ul {
       list-style: none;
@@ -63,9 +87,23 @@
       color: white;
       margin-top: 2rem;
     }
+    /* Space to prevent content under navbar */
+    .spacer {
+      height: 70px;
+    }
   </style>
 </head>
 <body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="spacer"></div>
+
   <header>
     <img src="https://media.licdn.com/dms/image/v2/D5603AQE36np53RDmIA/profile-displayphoto-shrink_200_200/B56ZbjgmItH0AY-/0/1747573705583?e=2147483647&v=beta&t=6T_t1-DiegGKtrGKw7cJEnXuLneAV1-dgyiK9HmelyY" alt="Sadanand Konapur">
     <h1>Sadanand Konapur</h1>
