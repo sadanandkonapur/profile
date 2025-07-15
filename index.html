@@ -8,8 +8,14 @@
   <style>
     :root {
       --bg: #0f172a;
-      --highlight: #ec4899;
+      --highlight: #38bdf8;
       --text: #ffffff;
+    }
+
+    body.light-mode {
+      --bg: #f5f5f5;
+      --highlight: #0ea5e9;
+      --text: #1e293b;
     }
 
     * {
@@ -24,6 +30,30 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      position: relative;
+      overflow-x: hidden;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%),
+                  radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 60%);
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      animation: moveBackground 20s linear infinite;
+    }
+
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(-50%, -50%); }
+      100% { transform: translate(0, 0); }
     }
 
     nav {
@@ -32,6 +62,7 @@
       width: 100%;
       background: rgba(15, 23, 42, 0.95);
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       padding: 1rem 0;
       z-index: 1000;
@@ -40,7 +71,7 @@
 
     nav a {
       color: var(--text);
-      margin: 0 1.2rem;
+      margin: 0.5rem 1rem;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s;
@@ -48,6 +79,20 @@
 
     nav a:hover {
       color: var(--highlight);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--highlight);
+      color: black;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 1001;
     }
 
     .spacer {
@@ -141,9 +186,24 @@
       padding: 1rem;
       color: #cbd5e1;
     }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
   <nav>
     <a href="#about">About</a>
     <a href="#education">Education</a>
@@ -191,12 +251,14 @@
         <span class="tag">Cursor IDE</span>
       </div>
     </section>
+
     <section id="projects">
       <h2>Projects</h2>
       <ul>
         <li><strong>Heart Stroke Prediction</strong><br />Built a machine learning model to predict stroke risk using real-world health data. Focused on accuracy and interpretability.</li>
       </ul>
     </section>
+
     <section id="contact">
       <h2>Contact</h2>
       <p><strong>Email:</strong> <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
@@ -208,5 +270,11 @@
   <footer>
     &copy; 2025 Sadanand Konapur. All rights reserved.
   </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
 </body>
 </html>
