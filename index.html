@@ -10,12 +10,14 @@
       --bg: #0f172a;
       --highlight: #38bdf8;
       --text: #ffffff;
+      --nav-bg: rgba(15, 23, 42, 0.95);
     }
 
     body.light-mode {
       --bg: #f5f5f5;
       --highlight: #0ea5e9;
       --text: #1e293b;
+      --nav-bg: rgba(245, 245, 245, 0.95);
     }
 
     * {
@@ -32,6 +34,7 @@
       line-height: 1.7;
       overflow-x: hidden;
       transition: background 0.5s, color 0.5s;
+      position: relative;
     }
 
     body::before {
@@ -41,29 +44,31 @@
       left: 0;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%),
-                  radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 60%);
+      background: linear-gradient(45deg, rgba(56,189,248,0.15), transparent 70%),
+                  linear-gradient(-45deg, rgba(56,189,248,0.1), transparent 60%);
+      background-size: 400% 400%;
+      animation: waveBackground 20s ease infinite;
       z-index: -1;
-      animation: moveBackground 20s linear infinite;
     }
 
-    @keyframes moveBackground {
-      0% { transform: translate(0, 0); }
-      50% { transform: translate(-50%, -50%); }
-      100% { transform: translate(0, 0); }
+    @keyframes waveBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(15, 23, 42, 0.95);
+      background: var(--nav-bg);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       padding: 1rem 0;
       z-index: 1000;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      transition: background 0.5s;
     }
 
     nav a {
@@ -126,7 +131,7 @@
     }
 
     header p {
-      color: #cbd5e1;
+      color: var(--text);
       font-size: 1.1rem;
       margin-top: 0.5rem;
     }
@@ -224,11 +229,9 @@
   </style>
 </head>
 <body>
-  <!-- Toggle Buttons -->
   <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
   <button class="theme-toggle" onclick="document.body.classList.toggle('light-mode')">🌗</button>
 
-  <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#education">Education</a>
@@ -288,7 +291,7 @@
 
     <section id="activities">
       <h2>College Activities</h2>
-      <p>multiple workshops conducted at <strong>Marri Laxman Reddy Institute of Technology and Management (MLRITM)</strong>:</p>
+      <p>Multiple workshops conducted at <strong>Marri Laxman Reddy Institute of Technology and Management (MLRITM)</strong>:</p>
       <ul>
         <li><strong>AI & ML Workshop:</strong> Focused on real-time Machine Learning applications.</li>
         <li><strong>GitHub Workshop:</strong> Learned collaborative development, version control, and project workflows.</li>
@@ -299,14 +302,8 @@
     <section id="certifications">
       <h2>Certifications</h2>
       <ul>
-        <li>
-          <strong>Fundamentals of Java Programming</strong>
-          <a href="https://www.coursera.org/account/accomplishments/verify/FUSTAEQ8RS3" target="_blank" title="View Certificate">↗️</a>
-        </li>
-        <li>
-          <strong>MongoDB for Developers</strong>
-          <a href="https://learn.mongodb.com/c/my3mE7hTRB27LmrkEVRjvQ" target="_blank" title="View Certificate">↗️</a>
-        </li>
+        <li><strong>Fundamentals of Java Programming</strong> <a href="https://www.coursera.org/account/accomplishments/verify/FUSTAEQ8RS3" target="_blank" title="View Certificate">↗️</a></li>
+        <li><strong>MongoDB for Developers</strong> <a href="https://learn.mongodb.com/c/my3mE7hTRB27LmrkEVRjvQ" target="_blank" title="View Certificate">↗️</a></li>
       </ul>
     </section>
 
@@ -319,7 +316,7 @@
   </main>
 
   <footer>
-    &copy; 2025 Sadanand Konapur. All rights reserved.
+  
   </footer>
 </body>
 </html>
