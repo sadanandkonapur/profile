@@ -30,7 +30,6 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
-      position: relative;
       overflow-x: hidden;
       transition: background 0.5s, color 0.5s;
     }
@@ -44,8 +43,6 @@
       height: 200%;
       background: radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%),
                   radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 60%);
-      background-position: center;
-      background-repeat: no-repeat;
       z-index: -1;
       animation: moveBackground 20s linear infinite;
     }
@@ -62,7 +59,6 @@
       width: 100%;
       background: rgba(15, 23, 42, 0.95);
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       padding: 1rem 0;
       z-index: 1000;
@@ -84,12 +80,25 @@
     .theme-toggle {
       position: fixed;
       top: 1rem;
-      right: 1rem;
+      right: 3rem;
       background: none;
       border: none;
       font-size: 1.5rem;
       color: var(--highlight);
       cursor: pointer;
+      z-index: 1001;
+    }
+
+    .menu-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--highlight);
+      cursor: pointer;
+      display: none;
       z-index: 1001;
     }
 
@@ -185,22 +194,29 @@
       color: #cbd5e1;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       nav {
+        flex-direction: column;
+        align-items: center;
         display: none;
       }
-      header h1 {
-        font-size: 2rem;
+
+      nav.show {
+        display: flex;
       }
-      h2 {
-        font-size: 1.4rem;
+
+      .menu-toggle {
+        display: block;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Toggle Buttons -->
   <button class="theme-toggle" onclick="document.body.classList.toggle('light-mode')">🌗</button>
+  <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
 
+  <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#education">Education</a>
@@ -212,12 +228,14 @@
 
   <div class="spacer"></div>
 
+  <!-- Header -->
   <header>
     <img src="https://media.licdn.com/dms/image/v2/D5603AQE36np53RDmIA/profile-displayphoto-shrink_200_200/B56ZbjgmItH0AY-/0/1747573705583?e=2147483647&v=beta&t=6T_t1-DiegGKtrGKw7cJEnXuLneAV1-dgyiK9HmelyY" alt="Sadanand Konapur">
     <h1>Sadanand Konapur</h1>
     <p>AI/ML Student · Python Developer · Tech Explorer</p>
   </header>
 
+  <!-- Main Content -->
   <main>
     <section id="about">
       <h2>About Me</h2>
@@ -259,7 +277,7 @@
 
     <section id="activities">
       <h2>College Activities</h2>
-      <p>multiple workshops conducted at <strong>Marri Laxman Reddy Institute of Technology and Management (MLRITM)</strong>:</p>
+      <p>I actively participated in multiple workshops conducted at <strong>Marri Laxman Reddy Institute of Technology and Management (MLRITM)</strong>:</p>
       <ul>
         <li><strong>AI & ML Workshop:</strong> Focused on real-time Machine Learning applications.</li>
         <li><strong>GitHub Workshop:</strong> Learned collaborative development, version control, and project workflows.</li>
@@ -275,6 +293,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     &copy; 2025 Sadanand Konapur. All rights reserved.
   </footer>
