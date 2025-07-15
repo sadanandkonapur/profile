@@ -85,13 +85,11 @@
       position: fixed;
       top: 1rem;
       right: 1rem;
-      background: var(--highlight);
-      color: black;
-      padding: 8px 14px;
+      background: none;
       border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--highlight);
+      cursor: default;
       z-index: 1001;
     }
 
@@ -202,7 +200,7 @@
   </style>
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  <button class="theme-toggle">🌗</button>
 
   <nav>
     <a href="#about">About</a>
@@ -259,6 +257,16 @@
       </ul>
     </section>
 
+    <section id="activities">
+      <h2>College Activities</h2>
+      <p>I actively participated in multiple workshops conducted at <strong>Marri Laxman Reddy Institute of Technology and Management (MLRITM)</strong>:</p>
+      <ul>
+        <li><strong>AI & ML Workshop:</strong> Focused on real-time Machine Learning applications.</li>
+        <li><strong>GitHub Workshop:</strong> Learned collaborative development, version control, and project workflows.</li>
+        <li><strong>LinkedIn Workshop:</strong> Built a professional online presence and improved networking skills.</li>
+      </ul>
+    </section>
+
     <section id="contact">
       <h2>Contact</h2>
       <p><strong>Email:</strong> <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
@@ -270,11 +278,5 @@
   <footer>
     &copy; 2025 Sadanand Konapur. All rights reserved.
   </footer>
-
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('light-mode');
-    }
-  </script>
 </body>
 </html>
