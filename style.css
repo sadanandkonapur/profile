@@ -1,0 +1,147 @@
+  </style>
+</head>
+<body>
+  <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+  <button class="theme-toggle" onclick="document.body.classList.toggle('light-mode')">🌗</button>
+
+  <nav id="navbar">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#activities">College Activities</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="spacer"></div>
+
+  <header>
+    <img src="https://media.licdn.com/dms/image/v2/D5603AQE36np53RDmIA/profile-displayphoto-shrink_200_200/B56ZbjgmItH0AY-/0/1747573705583?e=2147483647&v=beta&t=6T_t1-DiegGKtrGKw7cJEnXuLneAV1-dgyiK9HmelyY" alt="Sadanand Konapur">
+    <h1>Sadanand Konapur</h1>
+    <p><span id="typing"></span><span class="cursor">|</span></p>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am Sadanand Konapur, an enthusiastic undergraduate student pursuing a Bachelor's degree in Artificial Intelligence and Machine Learning at Marri Laxman Reddy Institute of Technology and Management. I am passionate about building intelligent systems using Python, exploring data science, and applying machine learning techniques to solve real-world problems. My interests also extend into web development and participating in tech events that push the boundaries of innovation.</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <img src="assests/MLRITM.png" alt="MLRITM Logo" class="education-logo">
+          <strong>Marri Laxman Reddy Institute of Technology and Management</strong><br />
+          B.Tech in AI & ML<br />
+          <em>Expected Graduation: 2027</em>
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="tag-list">
+        <span class="tag"><i class="devicon-python-plain"></i>Python</span>
+        <span class="tag"><i class="devicon-java-plain"></i>Java</span>
+        <span class="tag"><i class="devicon-mysql-plain"></i>MySQL</span>
+        <span class="tag"><i class="devicon-mongodb-plain"></i>MongoDB</span>
+        <span class="tag"><i class="devicon-sqlite-plain"></i>SQL</span>
+        <span class="tag"><i class="devicon-vscode-plain"></i>VS Code</span>
+        <span class="tag"><i class="devicon-linux-plain"></i>Cursor IDE</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Heart Stroke Prediction</strong><br />Built a machine learning model to predict stroke risk using real-world health data.</li>
+      </ul>
+    </section>
+
+    <section id="activities">
+      <h2>College Activities</h2>
+      <ul>
+        <li><strong>AI & ML Workshop:</strong> Real-time ML applications.</li>
+        <li><strong>GitHub Workshop:</strong> Version control and collaboration.</li>
+        <li><strong>LinkedIn Workshop:</strong> Personal branding.</li>
+      </ul>
+      <img src="assests/sadanand.webp" alt="event image" width="300" height="300">
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li><strong>Fundamentals of Java Programming</strong> <a href="https://www.coursera.org/account/accomplishments/verify/FUSTAEQ8RS3" target="_blank">↗️</a></li>
+        <li><strong>MongoDB for Developers</strong> <a href="https://learn.mongodb.com/c/my3mE7hTRB27LmrkEVRjvQ" target="_blank">↗️</a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><i class="fas fa-envelope"></i><strong>Email:</strong> <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
+      <p><i class="fab fa-github"></i><strong>GitHub:</strong> <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a></p>
+      <p><i class="fab fa-linkedin"></i><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/sadanand-konapur-53001a260" target="_blank">linkedin.com/in/sadanand-konapur</a></p>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.querySelector('nav').classList.remove('show');
+        });
+      });
+
+      const roles = ["AI/ML Student", "Python Developer", "Tech Explorer"];
+      let roleIndex = 0, charIndex = 0;
+      const typingSpan = document.getElementById("typing");
+
+      function type() {
+        if (charIndex < roles[roleIndex].length) {
+          typingSpan.textContent += roles[roleIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, 100);
+        } else {
+          setTimeout(erase, 1500);
+        }
+      }
+
+      function erase() {
+        if (charIndex > 0) {
+          typingSpan.textContent = roles[roleIndex].substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(erase, 50);
+        } else {
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(type, 500);
+        }
+      }
+
+      setTimeout(type, 1000);
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+      let lastScrollTop = 0;
+      const navbar = document.getElementById('navbar');
+
+      window.addEventListener('scroll', function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+          navbar.classList.add('hide');
+        } else {
+          navbar.classList.remove('hide');
+        }
+        lastScrollTop = scrollTop;
+      });
+    });
+  </script>
