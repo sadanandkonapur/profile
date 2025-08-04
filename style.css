@@ -1,147 +1,257 @@
-  </style>
-</head>
-<body>
-  <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
-  <button class="theme-toggle" onclick="document.body.classList.toggle('light-mode')">🌗</button>
+:root {
+      --bg: linear-gradient(to right, #1e3c72, #2a5298);
+      --highlight: #38bdf8;
+      --text: #ffffff;
+      --nav-bg: rgba(26, 28, 44, 0.95);
+    }
 
-  <nav id="navbar">
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#activities">College Activities</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    body.light-mode {
+      --bg: linear-gradient(to right, #f8fafc, #e2e8f0);
+      --highlight: #0ea5e9;
+      --text: #1e293b;
+      --nav-bg: rgba(245, 245, 245, 0.95);
+    }
 
-  <div class="spacer"></div>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-  <header>
-    <img src="https://media.licdn.com/dms/image/v2/D5603AQE36np53RDmIA/profile-displayphoto-shrink_200_200/B56ZbjgmItH0AY-/0/1747573705583?e=2147483647&v=beta&t=6T_t1-DiegGKtrGKw7cJEnXuLneAV1-dgyiK9HmelyY" alt="Sadanand Konapur">
-    <h1>Sadanand Konapur</h1>
-    <p><span id="typing"></span><span class="cursor">|</span></p>
-  </header>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      transition: background 0.6s ease, color 0.6s ease;
+      position: relative;
+    }
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I am Sadanand Konapur, an enthusiastic undergraduate student pursuing a Bachelor's degree in Artificial Intelligence and Machine Learning at Marri Laxman Reddy Institute of Technology and Management. I am passionate about building intelligent systems using Python, exploring data science, and applying machine learning techniques to solve real-world problems. My interests also extend into web development and participating in tech events that push the boundaries of innovation.</p>
-    </section>
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--nav-bg);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      transition: top 0.3s;
+    }
 
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li>
-          <img src="assests/MLRITM.png" alt="MLRITM Logo" class="education-logo">
-          <strong>Marri Laxman Reddy Institute of Technology and Management</strong><br />
-          B.Tech in AI & ML<br />
-          <em>Expected Graduation: 2027</em>
-        </li>
-      </ul>
-    </section>
+    nav.hide {
+      top: -80px;
+    }
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="tag-list">
-        <span class="tag"><i class="devicon-python-plain"></i>Python</span>
-        <span class="tag"><i class="devicon-java-plain"></i>Java</span>
-        <span class="tag"><i class="devicon-mysql-plain"></i>MySQL</span>
-        <span class="tag"><i class="devicon-mongodb-plain"></i>MongoDB</span>
-        <span class="tag"><i class="devicon-sqlite-plain"></i>SQL</span>
-        <span class="tag"><i class="devicon-vscode-plain"></i>VS Code</span>
-        <span class="tag"><i class="devicon-linux-plain"></i>Cursor IDE</span>
-      </div>
-    </section>
+    nav a {
+      color: var(--text);
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Heart Stroke Prediction</strong><br />Built a machine learning model to predict stroke risk using real-world health data.</li>
-      </ul>
-    </section>
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--highlight);
+      transition: width 0.3s;
+    }
 
-    <section id="activities">
-      <h2>College Activities</h2>
-      <ul>
-        <li><strong>AI & ML Workshop:</strong> Real-time ML applications.</li>
-        <li><strong>GitHub Workshop:</strong> Version control and collaboration.</li>
-        <li><strong>LinkedIn Workshop:</strong> Personal branding.</li>
-      </ul>
-      <img src="assests/sadanand.webp" alt="event image" width="300" height="300">
-    </section>
+    nav a:hover::after {
+      width: 100%;
+    }
 
-    <section id="certifications">
-      <h2>Certifications</h2>
-      <ul>
-        <li><strong>Fundamentals of Java Programming</strong> <a href="https://www.coursera.org/account/accomplishments/verify/FUSTAEQ8RS3" target="_blank">↗️</a></li>
-        <li><strong>MongoDB for Developers</strong> <a href="https://learn.mongodb.com/c/my3mE7hTRB27LmrkEVRjvQ" target="_blank">↗️</a></li>
-      </ul>
-    </section>
+    .theme-toggle, .menu-toggle {
+      position: fixed;
+      top: 1rem;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--highlight);
+      cursor: pointer;
+      z-index: 1001;
+    }
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p><i class="fas fa-envelope"></i><strong>Email:</strong> <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
-      <p><i class="fab fa-github"></i><strong>GitHub:</strong> <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a></p>
-      <p><i class="fab fa-linkedin"></i><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/sadanand-konapur-53001a260" target="_blank">linkedin.com/in/sadanand-konapur</a></p>
-    </section>
-  </main>
+    .theme-toggle { right: 1rem; }
+    .menu-toggle { left: 1rem; display: none; }
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', () => {
-          document.querySelector('nav').classList.remove('show');
-        });
-      });
+    .spacer { height: 70px; }
 
-      const roles = ["AI/ML Student", "Python Developer", "Tech Explorer"];
-      let roleIndex = 0, charIndex = 0;
-      const typingSpan = document.getElementById("typing");
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      animation: fadeInZoom 1.2s ease-out forwards;
+      opacity: 0;
+    }
 
-      function type() {
-        if (charIndex < roles[roleIndex].length) {
-          typingSpan.textContent += roles[roleIndex].charAt(charIndex);
-          charIndex++;
-          setTimeout(type, 100);
-        } else {
-          setTimeout(erase, 1500);
-        }
+    @keyframes fadeInZoom {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    header img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid var(--highlight);
+      margin-bottom: 1rem;
+      animation: glow 2.5s ease-in-out infinite alternate, bounceIn 1.2s ease forwards;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #38bdf8; }
+      to { box-shadow: 0 0 20px #38bdf8; }
+    }
+
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.3); }
+      50% { transform: scale(1.05); }
+      70% { transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      animation: slideDown 1.5s ease forwards;
+    }
+
+    @keyframes slideDown {
+      0% { transform: translateY(-30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      animation: fadeIn 2s ease-in forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .cursor {
+      font-weight: bold;
+      color: var(--highlight);
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    section.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--highlight);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: var(--highlight);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      background: var(--highlight);
+      color: black;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .tag i {
+      margin-right: 6px;
+      font-size: 1.1rem;
+    }
+
+    .education-logo {
+      width: 40px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    #certifications a {
+      margin-left: 8px;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    #contact i {
+      margin-right: 8px;
+      color: var(--highlight);
+    }
+
+    footer {
+      text-align: center;
+      background: #1e293b;
+      padding: 1rem;
+      color: #cbd5e1;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        display: none;
       }
-
-      function erase() {
-        if (charIndex > 0) {
-          typingSpan.textContent = roles[roleIndex].substring(0, charIndex - 1);
-          charIndex--;
-          setTimeout(erase, 50);
-        } else {
-          roleIndex = (roleIndex + 1) % roles.length;
-          setTimeout(type, 500);
-        }
+      nav.show {
+        display: flex;
       }
-
-      setTimeout(type, 1000);
-
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('reveal');
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll('section').forEach(section => observer.observe(section));
-
-      let lastScrollTop = 0;
-      const navbar = document.getElementById('navbar');
-
-      window.addEventListener('scroll', function () {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-          navbar.classList.add('hide');
-        } else {
-          navbar.classList.remove('hide');
-        }
-        lastScrollTop = scrollTop;
-      });
-    });
-  </script>
+      .menu-toggle {
+        display: block;
+      }
+    }
