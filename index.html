@@ -3,108 +3,355 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sadanand Konapur | AI/ML Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <title>Sadanand Konapur | DevOps Engineer</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
- <link rel="stylesheet" href="style.css">
 
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
-  <button class="theme-toggle" onclick="document.body.classList.toggle('light-mode')">🌗</button>
+  <!-- Mobile Menu & Theme Toggle -->
+  <button class="menu-toggle" aria-label="Toggle navigation"
+    onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+  <button class="theme-toggle" aria-label="Toggle theme"
+    onclick="document.body.classList.toggle('light-mode')">🌗</button>
 
+  <!-- Navbar -->
   <nav id="navbar">
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#activities">College Activities</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <span class="nav-logo-dot"></span>
+        <span class="nav-name">Sadanand</span>
+        <span class="nav-role">DevOps Engineer</span>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#activities">Activities</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </nav>
 
   <div class="spacer"></div>
 
+  <!-- Hero / Header -->
   <header>
-    <img src="https://media.licdn.com/dms/image/v2/D5603AQE36np53RDmIA/profile-displayphoto-shrink_200_200/B56ZbjgmItH0AY-/0/1747573705583?e=2147483647&v=beta&t=6T_t1-DiegGKtrGKw7cJEnXuLneAV1-dgyiK9HmelyY" alt="Sadanand Konapur">
-    <h1>Sadanand Konapur</h1>
-    <p><span id="typing"></span><span class="cursor">|</span></p>
+    <div class="hero-layout">
+      <div class="hero-main card">
+        <div class="hero-avatar-wrap">
+          <img
+            class="hero-avatar"
+            src="https://media.licdn.com/dms/image/v2/D5603AQE36np53RDmIA/profile-displayphoto-shrink_200_200/B56ZbjgmItH0AY-/0/1747573705583?e=2147483647&v=beta&t=6T_t1-DiegGKtrGKw7cJEnXuLneAV1-dgyiK9HmelyY"
+            alt="Sadanand Konapur"
+          >
+        </div>
+
+        <div class="hero-text">
+          <p class="hero-badge">
+            <span class="dot"></span> Open to Internships · DevOps & Cloud
+          </p>
+          <h1>Sadanand Konapur</h1>
+          <p class="role-line">
+            <span id="typing"></span><span class="cursor">|</span>
+          </p>
+          <p class="hero-subtitle">
+            DevOps Engineer focused on automation, CI/CD pipelines, containerization,
+            and reliable cloud-native deployments.
+          </p>
+          <div class="hero-links">
+            <a href="#contact" class="btn primary-btn">
+              <i class="fa-solid fa-paper-plane"></i> Contact Me
+            </a>
+            <a href="https://github.com/sadanandkonapur" target="_blank" class="btn ghost-btn">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://linkedin.com/in/sadanand-konapur-53001a260" target="_blank" class="btn ghost-btn">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-side card">
+        <h3>Snapshot</h3>
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-number">3<sup>rd</sup> Year</span>
+            <span class="stat-label">B.Tech AI & ML</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">DevOps Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Workshops / Events</span>
+          </div>
+        </div>
+        <p class="mini-note">
+          Currently exploring <strong>Docker</strong>, <strong>Kubernetes</strong>, and
+          <strong>GitHub Actions</strong> with a strong Linux and scripting foundation.
+        </p>
+      </div>
+    </div>
   </header>
 
   <main>
+    <!-- About -->
     <section id="about">
-      <h2>About Me</h2>
-      <p>I am Sadanand Konapur, an enthusiastic undergraduate student pursuing a Bachelor's degree in Artificial Intelligence and Machine Learning at Marri Laxman Reddy Institute of Technology and Management. I am passionate about building intelligent systems using Python, exploring data science, and applying machine learning techniques to solve real-world problems. My interests also extend into web development and participating in tech events that push the boundaries of innovation.</p>
+      <div class="section-header">
+        <h2>About Me</h2>
+        <p class="section-tagline">Who I am and what I love building</p>
+      </div>
+      <div class="section-grid">
+        <div class="card">
+          <p>
+            I am <strong>Sadanand Konapur</strong>, an undergraduate student pursuing a Bachelor's degree in
+            <strong>Artificial Intelligence &amp; Machine Learning</strong> at
+            <strong>Marri Laxman Reddy Institute of Technology and Management</strong>.
+          </p>
+          <p>
+            I’m building my career as a <strong>DevOps Engineer</strong> with strong foundations in
+            Linux, cloud basics, containers, CI/CD, monitoring, and scripting.
+          </p>
+          <p>
+            I enjoy creating reliable pipelines, automating repetitive tasks, and making deployments
+            smoother for developers. My interests include <strong>Docker, Kubernetes, GitHub Actions,
+            Jenkins, shell scripting</strong>, and exploring modern DevOps tooling.
+          </p>
+        </div>
+        <div class="card about-highlight">
+          <h3>Currently Focusing On</h3>
+          <ul class="pill-list">
+            <li>End-to-end CI/CD workflows</li>
+            <li>Containerization of apps with Docker</li>
+            <li>Linux & shell scripting for automation</li>
+            <li>Git & GitHub for team collaboration</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
+    <!-- Education -->
     <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li>
-          <img src="assests/MLRITM.png" alt="MLRITM Logo" class="education-logo">
-          <strong>Marri Laxman Reddy Institute of Technology and Management</strong><br />
-          B.Tech in AI & ML<br />
-          <em>Expected Graduation: 2027</em>
+      <div class="section-header">
+        <h2>Education</h2>
+        <p class="section-tagline">My academic journey</p>
+      </div>
+      <ul class="card-list">
+        <li class="card edu-card">
+          <img src="assets/MLRITM.png" alt="MLRITM Logo" class="education-logo">
+          <div>
+            <strong>Marri Laxman Reddy Institute of Technology and Management</strong><br />
+            B.Tech in Artificial Intelligence &amp; Machine Learning<br />
+            <em>Expected Graduation: 2027</em>
+          </div>
+        </li>
+
+        <li class="card edu-card">
+          <div class="edu-bullet"></div>
+          <div>
+            <strong>Sri Sangameshawara Government Polytechnic</strong><br />
+            Diploma<br />
+            <em>Completed</em>
+          </div>
         </li>
       </ul>
     </section>
 
+    <!-- Skills -->
     <section id="skills">
-      <h2>Skills</h2>
-      <div class="tag-list">
-        <span class="tag"><i class="devicon-python-plain"></i>Python</span>
-        <span class="tag"><i class="devicon-java-plain"></i>Java</span>
-        <span class="tag"><i class="devicon-mysql-plain"></i>MySQL</span>
-        <span class="tag"><i class="devicon-mongodb-plain"></i>MongoDB</span>
-        <span class="tag"><i class="devicon-sqlite-plain"></i>SQL</span>
-        <span class="tag"><i class="devicon-vscode-plain"></i>VS Code</span>
-        <span class="tag"><i class="devicon-linux-plain"></i>Cursor IDE</span>
+      <div class="section-header">
+        <h2>Skills</h2>
+        <p class="section-tagline">Technologies I use and explore</p>
+      </div>
+
+      <div class="skills-layout">
+        <div class="card">
+          <h3 class="subheading">DevOps & Cloud</h3>
+          <div class="tag-list">
+            <span class="tag"><i class="devicon-docker-plain"></i>Docker</span>
+            <span class="tag"><i class="devicon-kubernetes-plain"></i>Kubernetes</span>
+            <span class="tag"><i class="devicon-amazonwebservices-plain"></i>AWS (Basics)</span>
+            <span class="tag"><i class="fa-solid fa-code-branch"></i>CI/CD</span>
+            <span class="tag"><i class="devicon-githubactions-plain"></i>GitHub Actions</span>
+            <span class="tag"><i class="devicon-jenkins-plain"></i>Jenkins</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="subheading">Core Tools</h3>
+          <div class="tag-list">
+            <span class="tag"><i class="devicon-linux-plain"></i>Linux</span>
+            <span class="tag"><i class="devicon-bash-plain"></i>Shell Scripting</span>
+            <span class="tag"><i class="devicon-git-plain"></i>Git</span>
+            <span class="tag"><i class="fab fa-github"></i>GitHub</span>
+            <span class="tag"><i class="devicon-vscode-plain"></i>VS Code</span>
+            <span class="tag"><i class="fa-solid fa-laptop-code"></i>Cursor IDE</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="subheading">Programming & Databases</h3>
+          <div class="tag-list">
+            <span class="tag"><i class="devicon-python-plain"></i>Python</span>
+            <span class="tag"><i class="devicon-java-plain"></i>Java</span>
+            <span class="tag"><i class="devicon-mysql-plain"></i>MySQL</span>
+            <span class="tag"><i class="devicon-mongodb-plain"></i>MongoDB</span>
+            <span class="tag"><i class="devicon-sqlite-plain"></i>SQL</span>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Projects -->
     <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Heart Stroke Prediction</strong><br />Built a machine learning model to predict stroke risk using real-world health data.</li>
+      <div class="section-header">
+        <h2>Projects</h2>
+        <p class="section-tagline">Hands-on work that strengthened my skills</p>
+      </div>
+      <ul class="card-list project-list">
+        <li class="card">
+          <h3>CI/CD Pipeline for Web Application</h3>
+          <p>
+            Built a CI/CD pipeline using <strong>GitHub Actions</strong> to automatically build, test,
+            and deploy a web application to a cloud server. Included linting, unit tests, and
+            zero-downtime deployment steps.
+          </p>
+          <p class="tech-stack">Tech Stack: GitHub Actions, Linux, Nginx, Git</p>
+        </li>
+        <li class="card">
+          <h3>Containerized Microservice Setup</h3>
+          <p>
+            Containerized a simple microservice-based application using <strong>Docker</strong>, and
+            wrote scripts to run services with a single command. Focused on reproducible environments
+            and easy onboarding.
+          </p>
+          <p class="tech-stack">Tech Stack: Docker, Docker Compose, Linux</p>
+        </li>
+        <li class="card">
+          <h3>Heart Stroke Prediction (AI/ML)</h3>
+          <p>
+            Developed a machine learning model to predict stroke risk using health-related features.
+            Preprocessed data, trained multiple models, and evaluated performance metrics.
+          </p>
+          <p class="tech-stack">Tech Stack: Python, Pandas, Scikit-learn, Jupyter</p>
+        </li>
       </ul>
     </section>
 
+    <!-- College Activities -->
     <section id="activities">
-      <h2>College Activities</h2>
-      <ul>
-        <li><strong>AI & ML Workshop:</strong> Real-time ML applications.</li>
-        <li><strong>GitHub Workshop:</strong> Version control and collaboration.</li>
-        <li><strong>LinkedIn Workshop:</strong> Personal branding.</li>
-      </ul>
-      <img src="assests/sadanand.webp" alt="event image" width="300" height="300">
+      <div class="section-header">
+        <h2>College Activities</h2>
+        <p class="section-tagline">Where I learned beyond the classroom</p>
+      </div>
+      <div class="section-grid">
+        <ul class="card-list">
+          <li class="card">
+            <strong>AI & ML Workshop:</strong><br/>
+            Hands-on sessions on real-time ML applications, including model building and deployment basics.
+          </li>
+          <li class="card">
+            <strong>Git & GitHub Workshop:</strong><br/>
+            Version control, branching strategies, and collaboration workflows for team projects.
+          </li>
+          <li class="card">
+            <strong>LinkedIn & Personal Branding Workshop:</strong><br/>
+            Optimizing LinkedIn profile and building a professional online presence.
+          </li>
+        </ul>
+        <div class="card image-card">
+          <img src="assets/sadanand.webp" alt="College event image">
+          <p class="image-caption">
+            Participating in campus tech events and workshops to grow my skills and network.
+          </p>
+        </div>
+      </div>
     </section>
 
+    <!-- Certifications -->
     <section id="certifications">
-      <h2>Certifications</h2>
-      <ul>
-        <li><strong>Fundamentals of Java Programming</strong> <a href="https://www.coursera.org/account/accomplishments/verify/FUSTAEQ8RS3" target="_blank">↗️</a></li>
-        <li><strong>MongoDB for Developers</strong> <a href="https://learn.mongodb.com/c/my3mE7hTRB27LmrkEVRjvQ" target="_blank">↗️</a></li>
+      <div class="section-header">
+        <h2>Certifications</h2>
+        <p class="section-tagline">Courses that strengthened my foundations</p>
+      </div>
+      <ul class="card-list">
+        <li class="card">
+          <strong>Fundamentals of Java Programming</strong>
+          <a href="https://www.coursera.org/account/accomplishments/verify/FUSTAEQ8RS3" target="_blank">↗️</a>
+        </li>
+        <li class="card">
+          <strong>MongoDB for Developers</strong>
+          <a href="https://learn.mongodb.com/c/my3mE7hTRB27LmrkEVRjvQ" target="_blank">↗️</a>
+        </li>
+        <li class="card">
+          <strong>Cisco – Networking</strong><br/>
+          Introductory networking concepts and fundamentals.
+        </li>
+        <li class="card">
+          <strong>Python Foundation – Infosys Springboard</strong><br/>
+          Core Python programming concepts and problem solving.
+        </li>
       </ul>
     </section>
 
+    <!-- Contact -->
     <section id="contact">
-      <h2>Contact</h2>
-      <p><i class="fas fa-envelope"></i><strong>Email:</strong> <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a></p>
-      <p><i class="fab fa-github"></i><strong>GitHub:</strong> <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a></p>
-      <p><i class="fab fa-linkedin"></i><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/sadanand-konapur-53001a260" target="_blank">linkedin.com/in/sadanand-konapur</a></p>
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p class="section-tagline">Let’s connect and build something cool</p>
+      </div>
+      <div class="card contact-card">
+        <p>
+          <i class="fas fa-envelope"></i>
+          <strong>Email:</strong>
+          <a href="mailto:koonapursadanand@gmail.com">koonapursadanand@gmail.com</a>
+        </p>
+        <p>
+          <i class="fab fa-github"></i>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/sadanandkonapur" target="_blank">github.com/sadanandkonapur</a>
+        </p>
+        <p>
+          <i class="fab fa-linkedin"></i>
+          <strong>LinkedIn:</strong>
+          <a href="https://linkedin.com/in/sadanand-konapur-53001a260" target="_blank">
+            linkedin.com/in/sadanand-konapur-53001a260
+          </a>
+        </p>
+      </div>
     </section>
   </main>
 
+  <footer>
+    © <span id="year"></span> Sadanand Konapur · DevOps Engineer
+  </footer>
+
+  <!-- Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Close nav on mobile after click
       document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', () => {
           document.querySelector('nav').classList.remove('show');
         });
       });
 
-      const roles = ["AI/ML Student", "Python Developer", "Tech Explorer"];
+      // Typing effect (DevOps-focused roles)
+      const roles = [
+        "DevOps Engineer",
+        "Cloud & DevOps Enthusiast",
+        "Linux & Automation Lover"
+      ];
       let roleIndex = 0, charIndex = 0;
       const typingSpan = document.getElementById("typing");
 
@@ -129,18 +376,20 @@
         }
       }
 
-      setTimeout(type, 1000);
+      setTimeout(type, 800);
 
+      // Reveal sections on scroll
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('reveal');
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.15 });
 
       document.querySelectorAll('section').forEach(section => observer.observe(section));
 
+      // Hide/show navbar on scroll
       let lastScrollTop = 0;
       const navbar = document.getElementById('navbar');
 
@@ -153,6 +402,9 @@
         }
         lastScrollTop = scrollTop;
       });
+
+      // Dynamic year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
     });
   </script>
 </body>
